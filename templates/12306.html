@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block link %}
+    <link rel="stylesheet" href="{% static 'dist/css/12306.min.css' %}">
+{% endblock %}
+{% block logo %}
+    <a class="navbar-brand" href="{% url 'jd_list' %}"><img
+            src="/static/images/12306/12306logo.jpg"
+            alt="" id="img_dx"></a>
+{% endblock %}
+
+
+{% block main %}
+    <div class="code">
+        <img src="/media/captcha.jpg" alt="">
+        <form action="{% url 'code' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="num" placeholder="输入1-8 多个按空格分隔">
+            <button type="submit">提交</button>
+        </form>
+    </div>
+{% endblock %}
