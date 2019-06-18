@@ -90,7 +90,7 @@ class Index(View):
         input_pd = browser.find_element_by_id('password')
         time.sleep(1)
         input_name.send_keys('15157757088')
-        input_pd.send_keys('zcl1314')
+        input_pd.send_keys('')
         code.get_touclick_img()
         code.change_img()
         return render(request, '12306.html')
